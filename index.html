@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Detector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .browser-info {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Browser Detector</h1>
+  <p class="browser-info" id="browser-info">Detecting browser...</p>
+  
+  <script>
+    function detectBrowser() {
+      var userAgent = navigator.userAgent;
+      var browser = "Unknown Browser";
+
+      if (userAgent.indexOf("Firefox") > -1) {
+        browser = "Mozilla Firefox";
+      } else if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) {
+        browser = "Opera";
+      } else if (userAgent.indexOf("Trident") > -1) {
+        browser = "Internet Explorer";
+      } else if (userAgent.indexOf("Edge") > -1) {
+        browser = "Microsoft Edge";
+      } else if (userAgent.indexOf("Chrome") > -1) {
+        browser = "Google Chrome";
+      } else if (userAgent.indexOf("Safari") > -1) {
+        browser = "Apple Safari";
+      }
+
+      document.getElementById("browser-info").innerText = "You are using: " + browser;
+    }
+
+    detectBrowser();
+  </script>
+</body>
+</html>
